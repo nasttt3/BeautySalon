@@ -1,0 +1,62 @@
+﻿@page "/addMaster"
+@using BeautySalon.DataBase
+@using BeautySalon.Model
+@inject BeautySalonContext ef
+@rendermode InteractiveServer
+
+<!--https://localhost:7197/addmaster-->
+
+<PageTitle>AddMaster</PageTitle>
+<EditForm FormName="formAddItem" Model="_master" OnValidSubmit="Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <p>Имя мастера</p>
+    <input type="text" @bind="_master.MasterName"/>
+    <p>Телефон мастера</p>
+    <input type="text" @bind="_master.MasterNumber"/>
+    <p>Специализация мастера</p>
+    <input type="text" @bind="_master.Profession"/>
+    <p>Фото мастера</p>
+    <input type="text" @bind="_master.MasterImage"/>
+    <button type="submit">Добавить мастера</button>
+</EditForm>
+<div>
+    <a href="https://localhost:7197">Главная страница</a>
+</div>
+<h1>Предпоказ</h1>
+<div class="Colon">
+    @foreach (var item in ef.Masters.ToList())
+    {
+    <div class="parent">
+        <img class="MasterImage" src="@item.MasterImage"/>
+        <div class="MasterText">
+            <div>
+                @item.Profession
+            </div>
+            <div>
+                @item.MasterName
+            </div>
+            <div style="letter-spacing: 3px">
+                @item.MasterNumber
+            </div>
+        </div>
+        <div class="Image">
+            <div class="MasterButton">
+                <a style="text-decoration: none; color: black" href="https://localhost:7197/record">
+                    <h2>Записаться</h2>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    }
+</div>
+@code {
+    private Master _master = new Master();
+
+    private void Submit(EditContext arg)
+    {
+        ef.Add(_master);
+        ef.SaveChanges();
+        _master = new Master();
+    }
+}

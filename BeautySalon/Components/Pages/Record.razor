@@ -1,0 +1,78 @@
+@page "/Record"
+@using BeautySalon.DataBase
+@using BeautySalon.Model
+@inject BeautySalonContext ef
+@rendermode InteractiveServer
+<PageTitle>Запись</PageTitle>
+<div class="EndBack">
+    <div class="parent">
+        <div>
+            <a href="https://localhost:7197/">
+                <img class="HalfImage" src="Image/photo_2025-06-15_22-32-03.jpg"/>
+            </a>
+        </div>
+        <div class="EndFront">
+            <div class="Colon">
+                <div class="HeadParent">
+                    <div class="HeadAbout">О нас</div>
+                    <div class="HeadAbout">Услуги</div>
+                    <div class="HeadAbout">Акции</div>
+                    <div class="HeadAbout">Обучение</div>
+                </div>
+                <div class="EndTable">
+                    <EditForm FormName="formAddItem" Model="_client" OnValidSubmit="Submit">
+                        <DataAnnotationsValidator></DataAnnotationsValidator>
+                        <div style="text-align: center" class="Colon">
+                            <p>Пожалуйста, введите свои данные</p>
+                            <input class="EndInput" placeholder="Имя" type="text" @bind="_client.Name"/>
+                            <input class="EndInput" placeholder="Фамилия" type="text" @bind="_client.FirstName"/>
+                            <input class="EndInput" placeholder="Отчество" type="text" @bind="_client.LastName"/>
+                            <input class="EndInput" placeholder="Email" type="text" @bind="_client.Email"/>
+                            <input class="EndInput" placeholder="Номер телефона" type="text" @bind="_client.PhoneNumber"/>
+                            <p>Пожалуйста, назначьте дату и время сеанса</p>
+                            <input class="EndInput" @bind="_client.RecordOfDate" type="date"/>
+                            <input class="EndInput" @bind="_client.RecordOfTime" type="time"/>
+                            <select @bind="_client.RecordService" class="EndInput">
+                                <option>Выберите услугу</option>
+                                @foreach (var item in ef.Services.ToList())
+                                {
+                                    <option>
+                                        @item.ServiceName
+                                    </option>
+                                }
+                            </select>
+                            <select @bind="_client.RecordMaster" class="EndInput">
+                                <option>Выберите мастера</option>
+                                @foreach (var item in ef.Masters.ToList())
+                                {
+                                    <option>
+                                        @item.Profession
+                                        @item.MasterName
+                                    </option>
+                                }
+                            </select>
+                            <div class="Image">
+                                <button class="EndRecord" type="submit">Записаться</button>
+                            </div>
+                            <div class="Image">
+                                <a style="text-decoration: none; color: black" href="https://localhost:7197/back">
+                                    <h3 style="padding-top: 10px; margin-left: 100px" class="EndRecord">Написать отзыв</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    private Client _client = new Client();
+    
+    private void Submit(EditContext arg)
+    {
+        ef.Add(_client);
+        ef.SaveChanges();
+        _client = new Client();
+    }
+}

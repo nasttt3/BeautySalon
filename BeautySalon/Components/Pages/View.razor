@@ -1,0 +1,41 @@
+@page "/View"
+@using BeautySalon.DataBase
+@inject BeautySalonContext ef
+@rendermode InteractiveServer
+<PageTitle>View</PageTitle>
+
+<!--https://localhost:7197/view-->
+
+<div>
+    @foreach (var item in ef.Clients.ToList())
+    {
+        <div class="End">
+            <div class="Block">
+                <div class="parent">
+                    <div class="Colon">
+                        <div>
+                            <p>@item.Name</p>
+                            <p>@item.FirstName</p>
+                            <p>@item.LastName</p>
+                        </div>
+                        <div>
+                            <p>@item.PhoneNumber</p>
+                            <p>@item.Email</p>
+                        </div>
+                    </div>
+                    <div class="Colon">
+                        <div>
+                            <p>@item.RecordMaster</p>
+                            <p>@item.RecordService</p>
+                        </div>
+                        <div>
+                            <p> День : @item.RecordOfDate.Month</p>
+                            <p> Месяц : @item.RecordOfDate.Day</p>
+                            <p> Время : @item.RecordOfTime.Hour:@item.RecordOfTime.Minute</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

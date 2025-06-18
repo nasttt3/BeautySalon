@@ -1,0 +1,38 @@
+﻿@page "/AddService"
+@using BeautySalon.DataBase
+@using BeautySalon.Model
+@inject BeautySalonContext ef
+@rendermode InteractiveServer
+
+<!--https://localhost:7197/addservice-->
+
+<PageTitle>AddService</PageTitle>
+
+<EditForm FormName="formAdditem" Model="_service" OnValidSubmit="Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <p>Название услуги</p>
+    <input type="text" @bind="_service.ServiceName"/>
+    <p>Фото услуги</p>
+    <input type="text" @bind="_service.ServiceImage"/>
+    <button type="submit">Добавить услугу</button>
+</EditForm>
+<div>
+    <a href="https://localhost:7197">Главная страница</a>
+</div>
+<div>
+    @foreach (var item in ef.Services.ToList())
+    {
+        <img src="@item.ServiceImage"/>
+        <p>@item.ServiceName</p>
+    }
+</div>
+@code {
+    private Service _service = new Service();
+
+    private void Submit(EditContext arg)
+    {
+        ef.Add(_service);
+        ef.SaveChanges();
+        _service = new Service();
+    }
+}

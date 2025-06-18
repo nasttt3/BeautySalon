@@ -1,0 +1,478 @@
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #006bb7;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+h1:focus {
+    outline: none;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid #e50000;
+}
+
+.validation-message {
+    color: #e50000;
+}
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+    .blazor-error-boundary::after {
+        content: "An error has occurred."
+    }
+
+.darker-border-checkbox.form-check-input {
+    border-color: #929292;
+}
+.HeadParent {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    margin-left: 50px;
+}
+.HeadAbout {
+    font-family: "Bookman Old Style", serif;
+    margin-left: 90px;
+}
+.Back {
+    background-color: #e6e6e6;
+}
+.Front {
+    background-color: white;
+    margin-left: 150px;
+    width: 84%;
+    display: flex;
+    flex-direction: column;
+}
+.UpBody {
+    margin-left: 160px;
+}
+.Beauty {
+    font-family: "Bodoni MT Condensed";
+    margin-left: 145px;
+    margin-top: 10px;
+    font-size: 100px;
+}
+.House {
+    font-family: "Bodoni MT Condensed";
+    margin-top: -60px;
+    margin-left: 230px;
+    font-size: 100px;
+}
+.CenterBody {
+    margin-left: 80px;
+}
+.AlignUp {
+    margin-top: -25px;
+    font-family: "Bookman Old Style", serif;
+    font-size: 20px;
+}
+.photo {
+    margin-top: -260px;
+    margin-right: 90px;
+    height: 240px;
+    width: 320px;
+}
+.parent {
+    display: flex;
+    flex-direction: row;
+}
+.Colon {
+    display: flex;
+    flex-direction: column;
+}
+.TittlePhoto {
+    height: 530px;
+    width: 530px;
+    margin-top: -555px;
+}
+.SecondTittle {
+    border-radius: 25px;
+    border: 1px solid white;
+    margin-left: 20px;
+    margin-top: 200px;
+    height: 30px;
+    width: 140px;
+    color: white;
+    padding-left: 10px;
+    align-content: center;
+    background-color: #c9b5b5;
+    opacity: 84%;
+}
+.RecordTittle {
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-left: 280px;
+    margin-top: 565px;
+    height: 35px;
+    width: 190px;
+    color: white;
+    text-align: center;
+    align-content: center;
+    background-color: #c9b5b5;
+    opacity: 84%;
+}
+.About {
+    font-family: "Bookman Old Style";
+    font-weight: lighter;
+    opacity: 62%;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.Table {
+    margin-right: 85px;
+    padding: 10px;
+    height: 180px;
+    width: 425px;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    background-color: rgba(217, 217, 217, 0.22);
+}
+.TableTittle {
+    padding-top: 10px;
+    font-family: "Bodoni MT Condensed";
+    text-align: center;
+}
+.TableText {
+    font-family: "Century Schoolbook";
+    padding-left: 10px;
+    padding-top: 5px;
+    color: rgba(0, 0, 0, 0.74);
+}
+.ServicePhoto {
+    height: 300px;
+    width: 300px;
+    margin-top: -310px;
+    margin-right: 35px;
+}
+.CenterPhoto {
+    height: 300px;
+    width: 680px;
+    margin-top: -310px;
+    margin-right: 35px;
+}
+.Services {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.ServiceText {
+    margin-top: 280px;
+    margin-left: 40px;
+    height: 30px;
+    width: 220px;
+    color: white;
+    text-align: center;
+    background-color: #c9b5b5;
+    opacity: 84%;
+    border-radius: 25px;
+    border: 1px solid white;
+    font-family: "Bodoni MT Condensed";
+    letter-spacing: 5px;
+    font-size: 17px;
+}
+.CenterText {
+    margin-top: 280px;
+    margin-left: 70px;
+    height: 30px;
+    width: 520px;
+    color: white;
+    text-align: center;
+    background-color: #c9b5b5;
+    opacity: 84%;
+    border-radius: 25px;
+    border: 1px solid white;
+    font-family: "Bodoni MT Condensed";
+    letter-spacing: 5px;
+    font-size: 17px;
+}
+.DownImg {
+    width: 620px;
+    height: 420px;
+    margin-top: -410px;
+}
+.Special {
+    margin-left: 40px;
+    opacity: 99%;
+    color: white;
+    margin-bottom: 40px;
+}
+.Specialz {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.DownText {
+    height: 15px;
+    width: 500px;
+    color: white;
+    opacity: 99%;
+    margin-left: 10px;
+    font-size: 25px;
+}
+.Sale {
+    margin-top: 110px;
+    opacity: 99%;
+    color: white;
+    height: 15px;
+    width: 350px;
+    margin-left: 50px;
+    font-size: 25px;
+}
+.RecordText {
+    height: 50px;
+    width: 180px;
+    color: white;
+    text-align: center;
+    align-content: center;
+    background-color: rgba(217, 217, 217, 0.49);
+    opacity: 84%;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 20px;
+    margin-top: 110px;
+}
+.Under {
+    margin-top: 200px;
+    margin-left: -200px;
+    width: 124%;
+    height: 460px;
+    background-color: black;
+}
+.UnderTittle {
+    font-family: "Bodoni MT Condensed";
+    font-size: 100px;
+}
+.UnderAbout {
+    margin-right: 120px;
+    font-family: "Bookman Old Style";
+    font-size: 20px;
+}
+.UnderDate {
+    margin-right: 20px;
+    font-family: "Bookman Old Style";
+    font-size: 20px;
+}
+.UnderNumber {
+    margin-left: 600px;
+    font-family: "Bodoni MT Condensed";
+    font-size: 35px;
+}
+.UnderImage {
+    height: 600px;
+    margin-left: 830px;
+    margin-top: -560px;
+}
+.Image {
+    transition: transform 0.3s ease;
+}
+.Image:hover {
+    transform: scale(1.05);
+}
+
+.MasterImage {
+    height: 300px;
+    width: 300px;
+    border-radius: 200px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.MasterText {
+    width: 700px;
+    letter-spacing: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+    margin-left: 30px;
+    font-size: 40px;
+    font-family: "Bodoni MT Condensed", serif;
+}
+.MasterButton {
+    margin-top: 200px;
+    background-color: #cab7b5;
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding-top: 5px;
+    letter-spacing: 6px;
+    font-family: "Bodoni MT Condensed", serif;
+}
+
+.HalfImage {
+    margin-top: -20px;
+    height: 1200px;
+    width: 800px;
+    margin-left: -40px;
+}
+.EndBack {
+    width: 110%;
+    background-color: #e2e8e8;
+    height: 100%;
+}
+.EndFront {
+    width: 790px;
+    background-color: white;
+    height: 1200px;
+}
+.EndTable {
+    margin-top: 150px;
+    text-align: center;
+    width: 600px;
+    height: 100%;
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: rgba(226, 232, 232, 0.78);
+    font-family: "Bodoni MT Condensed", serif;
+    font-size: 35px;
+    margin-left: 90px;
+}
+.EndInput {
+    margin-left: 100px;
+    padding-left: 10px;
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: white;
+}
+.EndRecord {
+    padding-left: 10px;
+    width: 400px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border: 1px solid black;
+    background-color: #e6e6e6;
+}
+.FeedBak {
+    padding-bottom: 10px;
+    margin-bottom: 500px;
+    margin-left: 200px;
+    height: 430px;
+    width: 700px;
+    background-color: #e4e4e4;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.FeedBakText {
+    text-align: center;
+    font-size: 120%;
+    font-family: "Bodoni MT Condensed", serif;
+    padding-top: 2px;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 30px;
+    width: 300px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: rgba(255, 175, 140, 0.27);
+}
+.FeedbakInput {
+    padding-bottom: 260px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Bookman Old Style";
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 300px;
+    width: 660px;
+    border-radius: 15px;
+    border: 1px solid black;
+    font-size: 120%;
+}
+.FeedBakRate {
+    width: 430px;
+    height: 43px;
+    margin-left: 250px;
+    margin-top: 10px;
+    background-color: rgba(255, 175, 140, 0.27);
+    border-radius: 15px;
+    border: 1px solid black;
+}
+.feedBakButton {
+    background-color: rgb(228, 228, 228);
+    border-radius: 100px;
+    border: 1px solid #aaaaaa;
+    color: rgba(255, 175, 140, 0.51);
+    font-size: 120%;
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+.feedBakButton:hover {
+    color: #e39776;
+    transform: scale(1.05);
+}
+.BackFeed {
+    filter: blur(5px);
+    width: 100%;
+    height: 1000px;
+}
+.FeedFront {
+    background-color: white;
+    margin-left: 370px;
+    width: 60%;
+    height: 1060px;
+    display: flex;
+    flex-direction: column;
+}
+.FeedB {
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-right: 5px;
+    height: 38px;
+    width: 38px;
+    border-radius: 100px;
+    text-align: center;
+}
+.FeedText {
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: rgba(228, 228, 228, 0);
+    border-radius: 100px;
+    border: 1px solid #aaaaaa;
+    color: black;
+    font-size: 120%;
+    margin: 5px;
+}
+.Block {
+    height: 200px;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
+.End {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}

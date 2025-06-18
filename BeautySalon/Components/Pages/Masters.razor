@@ -1,0 +1,68 @@
+@page "/Masters"
+@using BeautySalon.DataBase
+@inject BeautySalonContext ef
+<PageTitle>Мастера</PageTitle>
+
+<div class="Back">
+    <div class="Front">
+        <div class="Colon">
+            @foreach (var item in ef.Masters.ToList())
+            {
+                <div class="parent">
+                    <img class="MasterImage" src="@item.MasterImage"/>
+                    <div class="MasterText">
+                        <div>
+                            @item.Profession
+                        </div>
+                        <div>
+                            @item.MasterName
+                        </div>
+                        <div style="letter-spacing: 3px">
+                            @item.MasterNumber
+                        </div>
+                    </div>
+                    <div class="Image">
+                        <div class="MasterButton">
+                            <a style="text-decoration: none; color: black" href="https://localhost:7197/record">
+                                <h2>Записаться</h2>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            }
+        </div>
+        <div class="Under">
+            <div style="color: white; margin-left: 300px" class="Colon">
+                <div class="UnderTittle">
+                    BEUTY HOUSE
+                </div>
+                <div style="margin-bottom: 60px" class="parent">
+                    <a style="text-decoration: none; color: white;" href="https://localhost:7197">
+                        <p class="UnderAbout">О нас</p>
+                    </a>
+                    <p class="UnderAbout">Услуги</p>
+                    <p class="UnderAbout">Акции</p>
+                    <p class="UnderAbout">Обучение</p>
+                </div>
+                <div class="Colon">
+                    <div class="parent">
+                        <p class="UnderDate">Вт-Сб</p>
+                        <p class="UnderDate">10:00-19:00</p>
+                    </div>
+                    <div class="parent">
+                        <p class="UnderDate">Вс-Пн</p>
+                        <p class="UnderDate">выходной</p>
+                    </div>
+                    <div>
+                        <p class="UnderDate">г.Самара ул.Партизанская 16</p>
+                    </div>
+                    <div>
+                        <p style="margin-left: 1200px" class="UnderNumber">+7-987-983-55-80</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- https://localhost:7197/masters -->

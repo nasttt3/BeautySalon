@@ -1,0 +1,92 @@
+@page "/Back"
+@using BeautySalon.DataBase
+@using BeautySalon.Model
+@inject BeautySalonContext ef
+@rendermode InteractiveServer
+
+<PageTitle>Оставьте свой отзыв!</PageTitle>
+<div>
+    <img class="BackFeed" src="Image/image_2025-06-16_18-57-11.png"/>
+    <div style="margin-top: -1060px; opacity: 80%; padding-top: 50px">
+        <div class="FeedFront">
+            <div style="margin-top: 30px; margin-bottom: 50px; margin-left: 200px" class="HeadParent">
+                <div class="HeadAbout">
+                    <a style="text-decoration: none; color: black" href="https://localhost:7197/">
+                        О нас
+                    </a> 
+                </div>
+                <div class="HeadAbout">Услуги</div>
+                <div class="HeadAbout">Акции</div>
+                <div class="HeadAbout">Обучение</div>
+            </div>
+            <div>
+                <a style="text-decoration: none; color: black" href="https://localhost:7197">
+                    <h1 style="margin-left: 400px; margin-top: -30px;" class="Beauty">
+                        Beauty
+                    </h1>
+                    <h1 style="margin-left: 500px" class="House">
+                        House
+                    </h1>
+                </a>
+            </div>
+            <div class="FeedBak">
+                <EditForm FormName="formAddItem" Model="_feedBack" OnValidSubmit="Submit">
+                    <DataAnnotationsValidator></DataAnnotationsValidator>
+                    <div class="Colon">
+                        <div class="FeedBakText">
+                            <p>Пожалуйста, оцените нас!</p>
+                        </div>
+                        <div contenteditable="true">
+                            <input class="FeedbakInput" @bind="_feedBack.Text" placeholder="У ваших мастеров золотые руки..." type="text"/>
+                        </div>
+                        <div class="FeedBakRate">
+                            <div class="parent">
+                                <p class="FeedText">Введите кол-во звёзд</p>
+                                <input  class="FeedB" @bind="_feedBack.Rate"/>
+                                <button class="feedBakButton" @bind="_feedBack.Rate" type="submit">Добавить отзыв</button>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+            <div style="width: 200%; margin-top: -200px; margin-left: -420px" class="Under">
+                <div style="color: white; margin-left: 300px; padding-left: 120px" class="Colon">
+                    <div class="UnderTittle">
+                        BEUTY HOUSE
+                    </div>
+                    <div style="margin-bottom: 60px" class="parent">
+                        <p class="UnderAbout">О нас</p>
+                        <p class="UnderAbout">Услуги</p>
+                        <p class="UnderAbout">Акции</p>
+                        <p class="UnderAbout">Обучение</p>
+                    </div>
+                    <div class="Colon">
+                        <div class="parent">
+                            <p class="UnderDate">Вт-Сб</p>
+                            <p class="UnderDate">10:00-19:00</p>
+                        </div>
+                        <div class="parent">
+                            <p class="UnderDate">Вс-Пн</p>
+                            <p class="UnderDate">выходной</p>
+                        </div>
+                        <div>
+                            <p class="UnderDate">г.Самара ул.Партизанская 16</p>
+                        </div>
+                        <div>
+                            <p style="margin-left: 930px" class="UnderNumber">+7-987-983-55-80</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    private FeedBack _feedBack = new FeedBack();
+    private void Submit(EditContext arg)
+    {
+        ef.Add(_feedBack);
+        ef.SaveChanges();
+        _feedBack = new FeedBack();
+    }
+}
